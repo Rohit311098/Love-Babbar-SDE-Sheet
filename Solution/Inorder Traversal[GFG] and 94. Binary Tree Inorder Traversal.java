@@ -94,7 +94,49 @@ class Solution {
     }
 }
 
-3. Morris Traversal
+3. Morris Traversal-> TC-O(N) SC-O(1)
+    class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        
+        if(root==null)
+        {
+            return new ArrayList<>();
+        }
+        
+        List<Integer> result=new ArrayList<>();
+        
+        while(root!=null)
+        {
+            if(root.left!=null)
+            {
+                TreeNode rootkleftkaright=root.left;
+                while(rootkleftkaright.right!=null && rootkleftkaright.right!=root)
+                {
+                    rootkleftkaright=rootkleftkaright.right;
+                }
+
+                if(rootkleftkaright.right!=root)
+                {
+                    rootkleftkaright.right=root;
+                    root=root.left;
+                }
+                else
+                {
+                    rootkleftkaright.right=null;
+                    result.add(root.val);
+                    root=root.right;
+                }
+            }
+            else
+            {
+                result.add(root.val);
+                root=root.right;
+            }
+        }
+        
+        return result;
+    }
+}
 
 
 
