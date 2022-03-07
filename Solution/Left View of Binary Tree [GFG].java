@@ -33,7 +33,8 @@ class Tree
     }
 }
 
-2. BFS Approach
+2. BFS Approach  TC-O(N) SC-O(N)
+    
 
 
 
