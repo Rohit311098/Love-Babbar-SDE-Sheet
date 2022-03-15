@@ -26,7 +26,6 @@ class Solution {
         helper(m,sr+1,sc,dr,dc,currpath+'D');
         
         //Left call
-        
         helper(m,sr,sc-1,dr,dc,currpath+'L');
         
         //Right call
