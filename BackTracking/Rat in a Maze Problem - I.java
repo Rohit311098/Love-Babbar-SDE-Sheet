@@ -29,7 +29,6 @@ class Solution {
         helper(m,sr,sc-1,dr,dc,currpath+'L');
         
         //Right call
-        
         helper(m,sr,sc+1,dr,dc,currpath+'R');
         
         m[sr][sc]=1;
