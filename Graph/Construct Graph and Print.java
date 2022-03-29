@@ -1,28 +1,49 @@
+import java.util.*;
 
-Scanner sc=new Scanner(System.in);
-
-          int vertex=sc.nextInt();
-
-          ArrayList<Edge> graph[]=new ArrayList[vertex];
-
-          for(int i=0;i<vertex;i++)
+public class Main
+{
+          public static class Edge
           {
-              graph[i]=new ArrayList<>();
+              int src;
+              int nbr;
+              int wt;
+                    
+              Pair(int src,int nbr,int wt)
+              {
+                  this.src=src;
+                  this.nbr=nbr;
+                   this.wt=wt;
+              }
+           
           }
-
-          int edges=sc.nextInt();
-
-          for(int i=0;i<edges;i++)
+          
+          public static void main()
           {
-              int src=sc.nextInt();
-              int nbr=sc.nextInt();
-              int wt=sc.nextInt();
 
-              graph[src].add(new Edge(src,nbr,wt));
-              graph[nbr].add(new Edge(nbr,src,wt));
-          }
+                    Scanner sc=new Scanner(System.in);
 
-          display(graph,vertex);
+                    int vertex=sc.nextInt();
+
+                    ArrayList<Edge> graph[]=new ArrayList[vertex];
+
+                    for(int i=0;i<vertex;i++)
+                    {
+                        graph[i]=new ArrayList<>();
+                    }
+
+                    int edges=sc.nextInt();
+
+                    for(int i=0;i<edges;i++)
+                    {
+                        int src=sc.nextInt();
+                        int nbr=sc.nextInt();
+                        int wt=sc.nextInt();
+
+                        graph[src].add(new Edge(src,nbr,wt));
+                        graph[nbr].add(new Edge(nbr,src,wt));
+                    }
+
+                    display(graph,vertex);
       }
   
   public static void display(ArrayList<Edge>[] graph,int vertex)
