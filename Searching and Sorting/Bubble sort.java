@@ -20,7 +20,10 @@
     }
 }
 
-2. Optimised approach
+2. Optimised approach- In average case TC-O(N2)  SC-O(1)
+
+If array is already sorted then Optimised approach take O(N) approach
+
 class Solution
 {
     //Function to sort the array using bubble sort algorithm.
