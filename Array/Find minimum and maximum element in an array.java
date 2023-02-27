@@ -1,34 +1,29 @@
 TC-O(N)   SC-O(1)
-class pair  
-{  
-    long first, second;  
-    public pair(long first, long second)  
-    {  
-        this.first = first;  
-        this.second = second;  
-    }  
-} 
+public static class Pair
+	{
+		 public int min,max;
+		 public Pair(int min,int max)
+		 {
+			 this.min=min;
+			 this.max=max;
+		 }
+	}
 
-class Compute 
-{
-    static pair getMinMax(long a[], long n)  
-    {
-        //Write your code here
-        pair p=new pair(Long.MAX_VALUE,Long.MIN_VALUE);
-        
-        for(int i=0;i<n;i++)
-        {
-            if(p.first>a[i])
-            {
-                p.first=a[i];
-            }
-            
-            if(p.second<a[i])
-            {
-                p.second=a[i];
-            }
-        }
-        
-        return p;
-    }
-}
+	private static Pair  method2(int[] a,int n)
+	{
+		Pair ans=new Pair(Integer.MAX_VALUE,Integer.MIN_VALUE);
+		
+		for(int i=0;i<n;i++)
+		{
+			if(a[i]>ans.max)
+			{
+				ans.max=a[i];
+			}
+			if(a[i]<ans.min)
+			{
+				ans.min=a[i];
+			}
+		}
+		
+		return ans;
+	}
