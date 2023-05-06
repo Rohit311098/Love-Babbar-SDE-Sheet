@@ -86,7 +86,7 @@ public static int kthSmallest(Integer[] arr, int l,
             if (pos - l > k - 1)
                 return kthSmallest(arr, l, pos - 1, k);
  
-            // Else recur for right subarray
+            // Else recur for right subarray but now value of k will get changes as we left some element in left subarray
             return kthSmallest(arr, pos + 1, r, k - pos + l - 1);
         }
  
