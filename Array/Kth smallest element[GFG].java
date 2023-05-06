@@ -38,6 +38,8 @@ class Solution{
 In QuickSort, we pick a pivot element, then move the pivot element to its correct position and partition the surrounding array. The idea is, not to do
 complete quicksort, but stop at the point where pivot itself is k’th smallest element. Also, not to recur for both left and right sides of pivot, but recur 
 for one of them according to the position of pivot. The worst case time complexity of this method is O(n2), but it works in O(n) on average. 
+    
+    TC-O(n) -> Average case   SC-0(1) constant space
         
 public static int partition(Integer[] arr, int l,
                                 int r)
