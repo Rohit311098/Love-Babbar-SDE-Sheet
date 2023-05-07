@@ -10,7 +10,7 @@ class Solution{
 }
 
 
-2. Using Priority Queue  TC-O(Nlogk) SC-O(logn)
+2. Using Priority Queue  TC-O(Nlogk) SC-O(k)
   class Solution{
     public static int kthSmallest(int[] arr, int l, int r, int k) 
     { 
