@@ -53,7 +53,7 @@ class Solution
     
    
 
-Approach 2:
+Approach 2: Dutch National Algorithm  TC-O(N) (Only one traversal )  SC-O(1)
 
 
 class Solution
