@@ -1,34 +1,38 @@
-1. Using Extra Space- TC-O(N)  SC-O(N)
+1. Using Extra Space- TC-O(2N) (Two traversal done)  SC-O(2N) (Two Array Created)
+
   class Solution {
     
     public void segregateElements(int arr[], int n)
     {
-        ArrayList<Integer> positive=new ArrayList<>();
-        ArrayList<Integer> negative=new ArrayList<>();
+       ArrayList<Integer> positive=new ArrayList<>();
+	        ArrayList<Integer> negative=new ArrayList<>();
+	        
+	        for(int i=0;i<n;i++)
+	        {
+	            if(arr[i]>0)
+	            {
+	                positive.add(arr[i]);
+	            }
+	            else
+	            {
+	                negative.add(arr[i]);
+	            }
+	        }
+	        
+	        int k=0;
+	        
+	        for(int i=0;i<positive.size();i++)
+	        {
+	        	arr[k]=positive.get(i);
+	        	k++;
+	        }
+	        
+	        for(int i=0;i<negative.size();i++)
+	        {
+	        	arr[k]=negative.get(i);
+	        	k++;
+	        }
         
-        for(int i=0;i<n;i++)
-        {
-            if(arr[i]>0)
-            {
-                positive.add(arr[i]);
-            }
-            else
-            {
-                negative.add(arr[i]);
-            }
-        }
-        
-        for(int i=0;i<positive.size();i++)
-        {
-            arr[i]=positive.get(i);
-        }
-        
-        int k=positive.size();
-        
-        for(int i=0;i<negative.size();i++,k++)
-        {
-            arr[k]=negative.get(i);
-        }
         
     }
 }
