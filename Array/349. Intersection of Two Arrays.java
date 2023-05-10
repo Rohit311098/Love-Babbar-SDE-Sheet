@@ -45,3 +45,31 @@ class Solution {
 
 
 Approach 2: HashSet Approach
+
+class Solution {
+    public int[] intersection(int[] a, int[] b) {
+      HashSet<Integer> h=new HashSet<>();
+		 ArrayList<Integer> result=new ArrayList<>();
+	       for(int i=0;i<a.length;i++)
+	       {
+	           h.add(a[i]);
+	       }
+	       for(int i=0;i<b.length;i++)
+	       {
+	           if(h.contains(b[i]))
+	           {
+	        	 result.add(b[i]); 
+	        	 h.remove(b[i]);
+	           }
+	       }
+	        
+	       int[] res = new int[result.size()];
+	        for(int i=0;i<res.length;i++)
+	        {
+	        	res[i]=result.get(i);
+	        	
+	        }      
+		 return res;
+        
+    }
+}
