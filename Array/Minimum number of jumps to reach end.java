@@ -45,5 +45,63 @@
 }
 
 
-2. DP Approach
+2. DP Approach- TC-O(N^2)  SC-O(N)
+
+class Solution{
+    static int minJumps(int[] arr){
+        // your code here
+        int n=arr.length;
+        int[] jumps=new int[arr.length];
+        
+        jumps[n-1]=0;
+        
+        for(int i=n-2;i>=0;i--)
+        {
+            if(arr[i]==0)
+            {
+                jumps[i]=Integer.MAX_VALUE;
+            }
+            else if(arr[i]>=n-i-1)
+            {
+                jumps[i]=1;
+            }
+            else
+            {
+                int min_jump=Integer.MAX_VALUE;
+                
+                for(int j=i+1;j<n && j<=arr[i]+i;j++)
+                {
+                    int get_jump=jumps[j];
+                    
+                    if(get_jump!=Integer.MAX_VALUE && get_jump<min_jump)
+                    {
+                        min_jump=get_jump;
+                    }
+                }
+                
+                if(min_jump!=Integer.MAX_VALUE)
+                {
+                    jumps[i]=min_jump+1;
+                }
+                else
+                {
+                    jumps[i]=Integer.MAX_VALUE;
+                }
+            }
+
+        }
+        
+        if(jumps[0]==Integer.MAX_VALUE)
+        {
+            return -1;
+        }
+        
+        return jumps[0];
+    }
+}
+
+
+3. Greedy Approach- TC-O(N)  SC-O(1)
+	
+	
   
