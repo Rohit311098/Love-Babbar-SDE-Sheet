@@ -103,4 +103,7 @@ class Solution {
 	    }
   
   
+3. Using ArrayList and Pair class
+	
+
   
