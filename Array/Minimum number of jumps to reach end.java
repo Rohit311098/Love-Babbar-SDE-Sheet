@@ -2,7 +2,14 @@
   class Solution{
     static int minJumps(int[] arr){
        
-       return RecursionminJumps(arr,0,arr.length-1);
+    int result=RecursionminJumps(arr,0,arr.length-1);
+    
+    if(result==Integer.MAX_VALUE)
+    {
+        return -1;
+    }
+    
+    return result;
     }
     static int RecursionminJumps(int[] arr,int l,int h){
 		
