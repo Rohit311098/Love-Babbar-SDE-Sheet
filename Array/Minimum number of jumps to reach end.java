@@ -103,5 +103,58 @@ class Solution{
 
 3. Greedy Approach- TC-O(N)  SC-O(1)
 	
+class Solution {
+    public int jump(int[] nums) {
+	    
+      //If we have zero or only 1 element in array
+      if(nums.length<=1)
+      {
+        return 0;
+      }
+      
+     //If first element is greater than or equal to length hence we can jump from first element only
+      if(nums[0]>=nums.length-1)
+      {
+        return 1;
+      }
+      int maxReach=nums[0];
+      int steps=nums[0];
+      int jumps=1;
+
+      for(int i=1;i<nums.length;i++)
+      {
+
+        if(i==nums.length-1)
+        {
+          return jumps;
+        }
+
+        if(i+nums[i]>=nums.length-1)
+        {
+          return jumps+1;
+        }
+
+       if(maxReach<i+nums[i])
+       {
+         maxReach=i+nums[i];
+       }
+
+        steps--;
+
+        if(steps==0)
+        {
+           jumps++;
+
+           steps=maxReach-i;
+        }
+
+      }
+
+      return -1;
+        
+    }
+
+}
+	
 	
   
