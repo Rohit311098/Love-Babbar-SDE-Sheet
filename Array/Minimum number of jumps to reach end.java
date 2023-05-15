@@ -107,10 +107,12 @@ class Solution {
     public int jump(int[] nums) {
 	    
       //If we have zero or only 1 element in array
-      if(nums.length<=1)
+      if(nums.length<=1 )
       {
         return 0;
       }
+     if (arr[0] == 0)
+            return -1;
       
      //If first element is greater than or equal to length hence we can jump from first element only
       if(nums[0]>=nums.length-1)
@@ -144,6 +146,9 @@ class Solution {
         if(steps==0)
         {
            jumps++;
+		
+	  if (i >= maxReach)
+                    return -1;
 
            steps=maxReach-i;
         }
