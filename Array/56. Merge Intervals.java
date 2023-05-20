@@ -83,4 +83,31 @@
 
 
 2. Using Inplace method- TC-O(NLOGN)+O(N)
+	
+class Solution {
+    public int[][] merge(int[][] Intervals) {
+         if(Intervals.length<=1) return Intervals;
+        
+        
+        Arrays.sort(Intervals,(i1,i2)->Integer.compare(i1[0],i2[0]));
+       
+        
+        List<int[]>result=new ArrayList<>();
+        int currInt[]=Intervals[0]; // {1,9}
+        result.add(currInt);
+        for(int[] interval:Intervals){
+            if(interval[0]<=currInt[1]){ //{1,9},{2,4}  => 2<=9  
+                currInt[1]=Math.max(currInt[1],interval[1]); // max(9,4)= 9
+            }
+            else{
+                currInt=interval; // add and take next interval
+                result.add(currInt);
+            }
+        }
+        
+        
+        return result.toArray(new int[result.size()][]);
+        
+    }
+}
   
