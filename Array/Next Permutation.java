@@ -29,7 +29,7 @@
         int next_big_index=prev_small_idx+1;
         for(int i=prev_small_idx+2;i<n;i++)
         {
-        	if(arr[prev_small_idx]<arr[i] && arr[next_big_index]>arr[i])
+        	if(arr[prev_small_idx]<arr[i] && arr[next_big_index]>=arr[i])
         	{
         		next_big_index=i;
         	}
