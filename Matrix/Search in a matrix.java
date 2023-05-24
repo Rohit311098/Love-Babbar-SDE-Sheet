@@ -52,7 +52,7 @@ class Sol
     {
         int i=0,j=M-1;
         
-        while(i>=0 && i<N && j>=0 && j<M)
+        while(i<N && j>=0)
         {
             if(mat[i][j]==X)
             {
