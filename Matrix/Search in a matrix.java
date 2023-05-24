@@ -1,3 +1,4 @@
+1. Approach 1: Using Binary Search
 class Sol
 {
      public static boolean binarysearch(int[] arr,int left,int right,int target)
@@ -38,5 +39,36 @@ class Sol
         
         return 0;
         
+    }
+}
+
+
+2. Optimised Approach
+
+
+class Sol
+{
+    public static int matSearch(int mat[][], int N, int M, int X)
+    {
+        int i=0,j=M-1;
+        
+        while(i>=0 && i<N && j>=0 && j<M)
+        {
+            if(mat[i][j]==X)
+            {
+                return 1;
+            }
+            
+            if(mat[i][j]<X)
+            {
+                i++;
+            }
+            else
+            {
+                j--;
+            }
+        }
+        
+        return 0;
     }
 }
