@@ -1,6 +1,32 @@
 1. Brute Force-> We traverse Each row and take count which ever is max we take that row TC-O(R*C)  SC-O(1)
   
-  Khud kar lena brute force
+  class Solution {
+    int rowWithMax1s(int arr[][], int n, int m) {
+        // code here
+        int max_count=0;
+        int max_count_row=0;
+        for(int i=0;i<n;i++)
+        {
+            int count=0;
+            for(int j=0;j<m;j++)
+            {
+                if(arr[i][j]==1)
+                {
+                    count=m-j;
+                    break;
+                }
+            }
+            
+            if(count>max_count)
+            {
+                max_count=count;
+                max_count_row=i;
+            }
+        }
+        
+        return max_count_row;
+    }
+}
   
   
 2. optimised Using Binary Search
