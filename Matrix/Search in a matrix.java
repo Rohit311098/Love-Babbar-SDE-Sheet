@@ -43,7 +43,7 @@ class Sol
 }
 
 
-2. Optimised Approach
+2. Optimised Approach:  TC-O(N+N)   SC-O(1)
 
 
 class Sol
