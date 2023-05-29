@@ -1,6 +1,6 @@
 1. Brute Force Approah: Traverse first row and search each element in all row. TC-O(N*(N*M))  SC-O(1)
   
-  2. Optimised Approach:   TC-O(N*M)  SC-O(N)
+  2. Optimised Approach:   TC-O(N*M)  SC-O(M)
 
 public static int[] commonelement(int[][] matrix,int n)
 {
