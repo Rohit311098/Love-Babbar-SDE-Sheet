@@ -1,29 +1,47 @@
 TC-O(N)   SC-O(1)
-public static class Pair
-	{
-		 public int min,max;
-		 public Pair(int min,int max)
-		 {
-			 this.min=min;
-			 this.max=max;
-		 }
-	}
+// User function Template for Java
+// User function Template for Java
 
-	private static Pair  method2(int[] a,int n)
-	{
-		Pair ans=new Pair(Integer.MAX_VALUE,Integer.MIN_VALUE);
-		
-		for(int i=0;i<n;i++)
-		{
-			if(a[i]>ans.max)
-			{
-				ans.max=a[i];
-			}
-			if(a[i]<ans.min)
-			{
-				ans.min=a[i];
-			}
-		}
-		
-		return ans;
-	}
+/*
+class Pair<K, V> {
+    private final K key;
+    private final V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+}
+
+Java users need to return result in Pair class
+For Example -> return new Pair(minimum,maximum)
+*/
+
+class Solution {
+    public Pair<Integer, Integer> getMinMax(int[] arr) {
+        int min=Integer.MAX_VALUE;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(min>arr[i])
+            {
+                min=arr[i];
+            }
+            
+            if(max<arr[i])
+            {
+                max=arr[i];
+            }
+        }
+        Pair<Integer,Integer> p=new Pair(min,max);
+        return p;
+    }
+}
